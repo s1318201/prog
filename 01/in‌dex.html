@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>FormLesson</title>
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+        <link href="css/style1.css" rel="stylesheet" type="text/css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+       p {
+            padding: 0.5em;/*文字周りの余白*/
+            color: #494949;/*文字色*/
+            background: #fffaf4;/*背景色*/
+            border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
+          }
+      body {
+            margin:120px;
+            }
+      div{
+          margin-bottom:50px;
+          margin-left: 50px;
+          margin-right: 50px;
+      }
+      h2{
+        background:#fffaf4;
+        border-bottom: solid 5px #ffaf58;
+        padding:10px;
+      }
+    </style>
+    </head>
+    <body>
+        <header>
+        </header>
+
+        <main> 
+          <h2>登録画面</h2>
+          <div>
+            <p>氏名：</p><input type="text" name="name" placeholder="山田花子"><span style="color:#cc3300">*</span>
+          
+            <p>フリガナ：</p><input type="text" name="huri" placeholder="ヤマダハナコ"><span style="color:#cc3300">*</span>
+          
+            <p>性別</p>
+                <input type="radio" name="jender">女
+                <input type="radio" name="jender">男
+                
+            <p>生年月日：</p><input type="date" name="birth"><span style="color:#cc3300">*</span>
+          
+            <p>住所：</p>
+                〒<input type="text" name="adress" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','adress','adress');">※ハイフン無（自動検索）<br>
+                <input type="text" name="adress" size="60">
+                <span style="color:#cc3300">*</span>
+          
+            <p>電話番号：</p><input type="tel" name="tel" value="" inputmode="tel" placeholder="080-1234-5678"><span style="color:#cc3300">*</span>
+          
+            <p>メールアドレス：</p><input type="email" name="email" size="10" maxlength="20"><span style="color:#cc3300">*</span>
+          
+            <p>パスワード：</p> 
+              <input type="password" class="field" id="password" value="">
+              <span style="color:#cc3300">*</span>
+              <input type="checkbox" id="password-check">パスワードを表示する 
+              
+            <script>
+             const pwd = document.getElementById('password');
+             const pwdCheck = document.getElementById('password-check');
+             pwdCheck.addEventListener('change', function() {
+                 if(pwdCheck.checked) {
+                     pwd.setAttribute('type', 'text');
+                 } else {
+                     pwd.setAttribute('type', 'password');
+                 }
+             }, false);
+            </script>
+          
+            <p>メール配信：</p>
+                <input type="radio" name="magazine">希望する
+                <input type="radio" name="magazine">希望しない
+                <span style="color:#cc3300">*</span>
+          
+            <p>会場：</p>
+              <select name="pref">
+                <option value=""> 選択してください </option>
+                <option value="shinjuku" >新宿</option>
+                <option value="shinagawa">品川</option>
+                <option value="shibuya">渋谷</option>
+                <option value="yokohama">横浜</option>
+              </select>
+              <span style="color:#cc3300">*</span>
+          
+            <p>日程：</p>
+              <select name="pref">
+                  <option value=""> 選択してください </option>
+                  <option value="day7">2020/11/07</option>
+                  <option value="day8">2020/11/08</option>
+                  <option value="day14">2020/11/14</option>
+                  <option value="day15">2020/11/15</option>
+                  <option value="day21">2020/11/21</option>
+                  <option value="day22">2020/11/22</option>
+                  <option value="day28">2020/11/28</option>
+                  <option value="day29">2020/11/29</option>
+              </select>
+              <span style="color:#cc3300">*</span>
+          
+          <p>備考：</p><textarea name="biko" rows="4" cols="40"></textarea>
+            
+        <div>
+            
+        </main>
+
+        <fooder>
+        </fooder>
+   
+    </body>
+</html>
